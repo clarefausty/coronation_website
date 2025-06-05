@@ -9,7 +9,7 @@ export default function Page() {
   e.preventDefault();
   if (form.name && form.message) {
     try {
-      const response = await fetch("http://localhost:5000/api/messages", {
+      const response = await fetch("https://coronation-website.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
