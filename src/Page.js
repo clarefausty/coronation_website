@@ -9,7 +9,7 @@ export default function Page() {
   e.preventDefault();
   if (form.name && form.message) {
     try {
-      const response = await fetch("https://coronation-website.onrender.com", {
+      const response = await fetch("https://coronation-website.onrender.com/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -26,7 +26,7 @@ export default function Page() {
 useEffect(() => {
   const fetchMessages = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/messages");
+      const res = await fetch("https://coronation-website.onrender.com");
       const data = await res.json();
       setMessages(data);
     } catch (err) {
